@@ -97,7 +97,9 @@ class CPT {
 	 */
 	public function get_cpt_core_class() {
 
-		require plugin_dir_path( __FILE__ ) . '../resources/CPT_Core/CPT_Core.php';
+		if ( ! class_exists( 'CPT_Core' ) ) :
+			require plugin_dir_path( __FILE__ ) . '../resources/CPT_Core/CPT_Core.php';
+		endif;
 
 	}
 }

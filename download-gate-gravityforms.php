@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name:     Download Gate for Gravity Forms
- * Plugin URI:      http://limecuda.com
+ * Plugin URI:      https://github.com/ethanclevenger91/download-gate-gravityforms
  * Description:     Works with Gravity Forms to allow visitors to download files after submitting a gravity form
- * Version:         0.1.0
- * Author:          Josh Mallard
- * Author URI:      http://limecuda.com
+ * Version:         0.2.0
+ * Author:          Ethan Clevenger
+ * Author URI:      https://sternerstuffdesign.com
  * License:         GPL-2.0+
  * Text Domain:     lc-gforms_dg
  *
@@ -17,6 +17,11 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
+/**
+ * Verifies CMB2 is installed and activated
+ *
+ * @since     0.2.0
+ */
 add_action( 'admin_init', 'cmb2_is_installed_and_active' );
 
 function cmb2_is_installed_and_active() {
@@ -25,6 +30,11 @@ function cmb2_is_installed_and_active() {
     }
 }
 
+/**
+ * Admin notice if CMB2 is not available
+ *
+ * @since     0.2.0
+ */
 function cmb2_required_notice(){
     ?><div class="error"><p>CMB2 must be installed and active for Download Gate Gravity Forms to work. Please <a href="<?php echo get_admin_url(null, 'plugin-install.php?s=cmb2&tab=search&type=term'); ?>">install</a> and activate CMB2 for proper functionality.</p></div><?php
 }

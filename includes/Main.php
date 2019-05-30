@@ -85,8 +85,6 @@ class Main {
 	 */
 	public function get_files() {
 
-		require plugin_dir_path( __FILE__ ) . '../resources/CMB2/init.php';
-
 		require plugin_dir_path( __FILE__ ) . 'Modify_Form.php';
 		require plugin_dir_path( __FILE__ ) . 'CPT.php';
 		require plugin_dir_path( __FILE__ ) . 'Upload_Field.php';

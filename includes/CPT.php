@@ -43,7 +43,7 @@ class CPT {
 	 */
 	public function register_cpt() {
 
-		$this->get_cpt_core_class();
+		// $this->get_cpt_core_class();
 
 		register_via_cpt_core(
 			$this->cpt_name(),

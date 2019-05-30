@@ -17,6 +17,8 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
+require_once( plugin_dir_path( __FILE__ ) . 'vendor/autoload.php' );
+
 add_action( 'gform_loaded', 'lc_gforms_dg_register_gform_addon' );
 /**
  * Get the Gravity Forms AddOn stuff going

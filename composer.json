@@ -1,6 +1,6 @@
 {
 	"name": "ethanclevenger91/download-gate-gravityforms",
-    "type": "project",
+    "type": "wordpress-plugin",
     "authors": [
         {
             "name": "Ethan Clevenger",

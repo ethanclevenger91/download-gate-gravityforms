@@ -43,7 +43,7 @@ class CPT {
 	 */
 	public function register_cpt() {
 
-		// $this->get_cpt_core_class();
+		$this->get_cpt_core_class();
 
 		register_via_cpt_core(
 			$this->cpt_name(),
@@ -97,7 +97,9 @@ class CPT {
 	 */
 	public function get_cpt_core_class() {
 
-		require plugin_dir_path( __FILE__ ) . '../resources/CPT_Core/CPT_Core.php';
+		if ( ! class_exists( 'CPT_Core' ) ) :
+			require plugin_dir_path( __FILE__ ) . '../resources/CPT_Core/CPT_Core.php';
+		endif;
 
 	}
 }

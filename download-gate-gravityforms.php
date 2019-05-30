@@ -17,6 +17,18 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
+add_action( 'admin_init', 'cmb2_is_installed_and_active' );
+
+function cmb2_is_installed_and_active() {
+    if ( is_admin() && !is_plugin_active( 'cmb2/init.php' ) ) {
+        add_action( 'admin_notices', 'cmb2_required_notice' );
+    }
+}
+
+function cmb2_required_notice(){
+    ?><div class="error"><p>CMB2 must be installed and active for Download Gate Gravity Forms to work. Please <a href="<?php echo get_admin_url(null, 'plugin-install.php?s=cmb2&tab=search&type=term'); ?>">install</a> and activate CMB2 for proper functionality.</p></div><?php
+}
+
 add_action( 'gform_loaded', 'lc_gforms_dg_register_gform_addon' );
 /**
  * Get the Gravity Forms AddOn stuff going

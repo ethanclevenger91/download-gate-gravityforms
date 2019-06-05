@@ -3,7 +3,7 @@
  * Plugin Name:     Download Gate for Gravity Forms
  * Plugin URI:      https://github.com/ethanclevenger91/download-gate-gravityforms
  * Description:     Works with Gravity Forms to allow visitors to download files after submitting a gravity form
- * Version:         0.2.0
+ * Version:         1.0.0
  * Author:          Ethan Clevenger
  * Author URI:      https://sternerstuffdesign.com
  * License:         GPL-2.0+
@@ -20,7 +20,7 @@ if ( ! defined( 'WPINC' ) ) {
 /**
  * Verifies CMB2 is installed and activated
  *
- * @since     0.2.0
+ * @since     1.0.0
  */
 add_action( 'admin_init', 'cmb2_is_installed_and_active' );
 
@@ -28,15 +28,28 @@ function cmb2_is_installed_and_active() {
     if ( is_admin() && !is_plugin_active( 'cmb2/init.php' ) ) {
         add_action( 'admin_notices', 'cmb2_required_notice' );
     }
+
+    if ( is_admin() && !is_plugin_active( 'cpt-core/CPT_Core.php' ) ) {
+    	add_action( 'admin_notices', 'cpt_core_required_notice' );
+    }
 }
 
 /**
  * Admin notice if CMB2 is not available
  *
- * @since     0.2.0
+ * @since     1.0.0
  */
 function cmb2_required_notice(){
     ?><div class="error"><p>CMB2 must be installed and active for Download Gate Gravity Forms to work. Please <a href="<?php echo get_admin_url(null, 'plugin-install.php?s=cmb2&tab=search&type=term'); ?>">install</a> and activate CMB2 for proper functionality.</p></div><?php
+}
+
+/**
+ * Admin notice if CMB2 is not available
+ *
+ * @since     1.0.0
+ */
+function cpt_core_required_notice(){
+    ?><div class="error"><p>WDS CPT Core must be installed and active for Download Gate Gravity Forms to work. Please <a target="_blank" href="https://github.com/WebDevStudios/CPT_Core">install</a> and activate WDS CPT Core for proper functionality.</p></div><?php
 }
 
 add_action( 'gform_loaded', 'lc_gforms_dg_register_gform_addon' );

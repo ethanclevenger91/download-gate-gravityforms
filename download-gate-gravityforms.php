@@ -29,7 +29,7 @@ function cmb2_is_installed_and_active() {
         add_action( 'admin_notices', 'cmb2_required_notice' );
     }
 
-    if ( is_admin() && !is_plugin_active( 'cpt-core/CPT_Core.php' ) ) {
+    if ( is_admin() && !class_exists( 'CPT_Core' ) ) {
     	add_action( 'admin_notices', 'cpt_core_required_notice' );
     }
 }

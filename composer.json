@@ -1,33 +1,33 @@
 {
 	"name": "ethanclevenger91/download-gate-gravityforms",
-    "type": "wordpress-plugin",
-    "authors": [
-        {
-            "name": "Ethan Clevenger",
-            "email": "ethan.c.clevenger@gmail.com"
-        },
-        {
-            "name": "Josh Mallard",
-            "email": "josh@limecuda.com",
-            "homepage": "http://joshmallard.com"
-        }
-    ],
-    "repositories": {
-        "0": {
-            "type": "composer",
-            "url": "https://wpackagist.org"
-        }
-    },
-	"require": {
-		"wpackagist-plugin/cmb2":"2.6.0",
-		"webdevstudios/cpt-core": "^1.0"
+	"type": "wordpress-plugin",
+	"authors": [
+		{
+			"name": "Ethan Clevenger",
+			"email": "ethan.c.clevenger@gmail.com"
+		},
+		{
+			"name": "Josh Mallard",
+			"email": "josh@limecuda.com",
+			"homepage": "http://joshmallard.com"
+		}
+	],
+	"repositories": {
+		"0": {
+			"type": "composer",
+			"url": "https://wpackagist.org"
+		}
 	},
-	"extra": {
-        "installer-paths": {
-            "vendor/{$name}": [
-            	"wpackagist-plugin/cmb2",
-            	"webdevstudios/cpt-core"
-            ]
-        }
-    }
+	"require": {
+	  "wpackagist-plugin/cmb2":"2.6.0",
+	  "webdevstudios/cpt-core": "^1.0"
+  },
+  "extra": {
+	"installer-paths": {
+		"vendor/{$name}": [
+		   "wpackagist-plugin/cmb2",
+		   "webdevstudios/cpt-core"
+	   ]
+	}
+}
 }

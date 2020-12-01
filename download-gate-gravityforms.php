@@ -3,7 +3,7 @@
  * Plugin Name:     Download Gate for Gravity Forms
  * Plugin URI:      https://github.com/ethanclevenger91/download-gate-gravityforms
  * Description:     Works with Gravity Forms to allow visitors to download files after submitting a gravity form
- * Version:         1.0.1
+ * Version:         1.0.2
  * Author:          Ethan Clevenger
  * Author URI:      https://sternerstuffdesign.com
  * License:         GPL-2.0+
